@@ -7,3 +7,5 @@ if (file.exists("renv")) {
 
 # Allow absolute module imports (relative to the app root).
 options(box.path = getwd())
+
+options(styler.cache_root = "styler-perm")

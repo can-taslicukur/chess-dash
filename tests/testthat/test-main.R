@@ -3,11 +3,11 @@ box::use(
   testthat[...],
 )
 box::use(
-  app/main[...],
+  app / main[...],
 )
 
 test_that("main server works", {
   testServer(server, {
-    expect_equal(2*2, 4)
+    expect_equal(2 * 2, 4)
   })
 })
