@@ -1,6 +1,6 @@
 box::use(
   dplyr[
-    mutate, case_when, case_match, row_number
+    mutate, case_when, case_match, row_number, group_by, ungroup
   ],
   stringr[str_extract]
 )
@@ -57,5 +57,5 @@ process_raw_games <- function(data) {
 
   data <- data[order(data$Timestamp, decreasing = FALSE), ]
 
-  data |> mutate(GameNumber = row_number())
+  data |> group_by(TimeControl) |> mutate(GameNumber = row_number()) |> ungroup()
 }
