@@ -1,4 +1,4 @@
-test_that("mutated columns doesnt have NA values when platform = 'chess.com'", {
+test_that("mutated columns doesnt have any NA values when platform = 'chess.com'", {
   expect_true({
     box::use(
       app / logic / get_raw_games,
@@ -18,7 +18,7 @@ test_that("mutated columns doesnt have NA values when platform = 'chess.com'", {
   })
 })
 
-test_that("mutated columns doesnt have NA values when platform = 'Lichess'", {
+test_that("mutated columns doesnt have any NA values when platform = 'Lichess'", {
   expect_true({
     box::use(
       app / logic / get_raw_games,

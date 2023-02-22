@@ -26,9 +26,11 @@ test_that("returns the correct user", {
     box::use(
       app / logic / get_raw_games
     )
-    chessdotcom <- get_raw_games$get_raw_games("chess.com", "yesil36")
-    lichess <- get_raw_games$get_raw_games("Lichess", "Georges")
+    chessdotcom_username <- "yesil36"
+    lichess_username <- "Georges"
+    chessdotcom <- get_raw_games$get_raw_games("chess.com", chessdotcom_username)
+    lichess <- get_raw_games$get_raw_games("Lichess", lichess_username)
 
-    chessdotcom$Username[1] == "chesstopkek" & lichess$Username[1] == "Georges"
+    chessdotcom$Username[1] == chessdotcom_username & lichess$Username[1] == lichess_username
   })
 })
