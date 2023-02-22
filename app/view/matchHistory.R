@@ -23,11 +23,10 @@ matchHistoryServer <- function(id, data) {
           tail(20)
 
         names(last_20_games) <- c("Date", "Result", "Played Color", "Time Control", "Your ELO", "Opponent ELO")
-
         reactable(last_20_games,
           theme = superhero(),
           rowStyle = function(index) {
-            switch(last_20_games[index, "Result"],
+            switch(last_20_games$Result[index],
               Win = list(background = "#79ea86"),
               Loss = list(background = "#e75757"),
               Draw = list(background = "#808080")
